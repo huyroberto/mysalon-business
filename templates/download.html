@@ -1,0 +1,58 @@
+<style>
+    .as {
+        vertical-align: middle;
+        font-size: 18px;
+        font-weight: 700;
+    }
+    
+    .glowing-border {
+        border: 1px dashed #9ecaed;
+    }
+     input::-webkit-input-placeholder { /* Chrome/Opera/Safari */
+      color: #8E8E93;
+    }
+</style>
+<ion-view title="Download data">
+    <ion-content scroll="true">
+         <div  style="height:20%; background:#EFEFF4; text-align:left; font-size:18px; color:#929292; padding-top:5%; padding-left:5%; padding-bottom:1%; border-bottom: 1px solid #E3E2E5; border-top: 1px solid #E3E2E5">
+                               Select what you would like to download
+                        </div>
+        <table style="width:100%">
+            <tr>
+                <td colspan="2" style="font-size:20px; font-family: sans-serif; font-weight:100; padding-left:2px; padding-top:0px; padding-bottom:0px; border:1px solid #E3E2E5; border-top:none; border-right:none; border-left:none">
+                    <ion-list>
+                        <ion-radio ng-model="choice" ng-value="'A'" style="width:100%">My Schedule</ion-radio>
+                    </ion-list>
+                </td>
+                <!--<td colspan="2" class="as" style="color:#9B9B9B; text-align:center; border:1px solid #E3E2E5; border-left:none; border-top:none; border-right:none; font-weight:100">
+                    <center>
+                        <input type="text" placeholder="Imamura Chiharu" style="padding-left:15px; color: #9B9B9B" required>
+                    </center>
+                </td>-->
+            </tr>
+            <tr style="height:50px">
+                <td colspan="2" style="font-size:20px; font-family: sans-serif; font-weight:100; padding-left:2px; padding-top:0px; padding-bottom:0px; border:1px solid #E3E2E5; border-top:none; border-right:none; border-left:none">
+                     <ion-list>
+                        <ion-radio ng-model="choice" ng-value="'B'" style="width:100%">Client list</ion-radio>
+                    </ion-list>
+                </td>
+                <!--<td colspan="2" class="as" style="color:#9B9B9B; text-align:center; border:1px solid #E3E2E5; border-left:none; border-top:none; border-right:none; font-weight:100">
+                    <center>
+                        <input type="text" placeholder="Imamura Chiharu" style="padding-left:15px; color: #9B9B9B" required>
+                    </center>
+                </td>-->
+            </tr>
+        </table>
+        <div  style="height:20%; background:#EFEFF4; text-align:left; font-size:18px; color:#929292; padding-top:5%; padding-left:5%; padding-bottom:1%; border-bottom: 1px solid #E3E2E5; border-top:none">
+                               Enter email address
+                        </div>
+                        <label class="item item-input ion-android-person" style="border-radius:5px; color:#FF0038; font-size:25px; width: 90%; margin: auto; margin-bottom:7px; margin-top:20px; background: #fff; border:1px solid #E0E0E0">
+                        <input id="email" type="text" placeholder="Email address" ng-model="user.username" style="padding-left:20px; color: #000" required>
+            </label>
+        <center>
+              <a ng-href="#/app/login" class="button waves-effect waves-light button-full button-assertive" style="margin-top:40px; padding-left:0px; padding-right:0px; width:40%;text-transform:none; color:#fff; font-size:21px; text-align:center; box-shadow:#FF0038; border:1px solid #FF0038; background:#FF0038; font-weight:100">
+                Send
+                </a>
+        </center>
+    </ion-content>
+</ion-view>

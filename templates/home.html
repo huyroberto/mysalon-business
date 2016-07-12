@@ -1,0 +1,31 @@
+<ion-view  title="My Salon" hide-back-button="true">
+     <ion-nav-buttons side="left">
+        <button class="button button-icon button-clear" menu-toggle="left">
+            <img src="img/dm.png">
+        </button>
+    </ion-nav-buttons>
+   <ion-content scroll="true">
+        <!--<div class="login-header" style="padding-top:10px;">  
+                    My Salon
+                </div>-->
+                <div class="padding">
+                <form ng-hide="!islogin" style="height: 100%; background: #fff; background-size: cover;">
+                    <h5 style="font-size:20px; text-align:center; color:#FF0038; padding:0;font-weight:500; margin-bottom:6%; margin-top:2%">
+                        Hello sasuke {{user_profile.name}}
+                    </h5>
+                    <h4 style="color:#fff; text-align:center; padding-top:0px; padding-bottom:10px; margin-top:10px">
+                        <img src="img/nana.jpeg" style="width:140px;">
+                    </h4>
+                    <h4 style="text-align:center; color:#B2B2B2">
+                        Your next appointment is <br/> Today 10:00
+                    </h4>
+                <div class="padding">
+                    <center>
+                        <a ng-href="#/app/add-reservation" class="button waves-effect waves-light button-full button-assertive" style="padding-left:0px; padding-right:0px; width:65%;text-transform:none; color:#fff; font-size:17px; text-align:center; background:#FF0038; box-shadow:none; border:1px solid #E0E0E0;">
+                        + Reservation</a>
+                    </center>
+                </div>
+            </form>
+                </div>
+</ion-content>
+</ion-view>

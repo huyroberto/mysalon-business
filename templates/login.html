@@ -1,0 +1,39 @@
+<ion-view hide-tabs hide-nav-bar="true" >
+   <ion-content scroll="true">
+    <div class="login-header" style="margin-top:-30px; padding-top:10px;">  
+           <span> My Salon </span>
+     </div>
+    <form style="height: 100%; background: #fff; background-size: cover;">
+            <h4 style="color:#fff; text-align:center; padding-top:10px; padding-bottom:10px; margin-top:30px">
+                <img src="img/logo.png" style="width:120px;">
+            </h4>
+            <h4 style="text-align:center; color:#000; padding:0; margin-top:-30px; font-weight:100; margin-bottom:0px">
+                Welcome to my salon!
+            </h4>
+         <div class="padding">
+             <center>
+                <a ng-href="#/app/register" class="button waves-effect waves-light button-full button-assertive" style="; width:280px;text-transform:none; color:#000; font-size:17px; opacity:.9; text-align:left; background:#F1F1F1; box-shadow:none; border:1px solid #E0E0E0;"><i class="ion-ios-person" style="color:#FF0038; font-size:22px; padding-right:10px; "></i>Create a New Account</a>
+                <a ng-click="setlogin()" ng-show="!show"  class="button waves-effect waves-light button-full button-assertive" style="width:280px;text-transform:none; color:#000; font-size:17px; opacity:.9; text-align:left; background:#F1F1F1; box-shadow:none; border:1px solid #E0E0E0;"><i class="ion-ios-person" style="color:#FF0038; font-size:22px; padding-right:10px"></i>Login </a>
+                
+             </center>
+        </div>
+        <div ng-hide="!show">
+            <div class="list" style="margin-top:10px">
+                <label class="item item-input ion-android-person" style="border-radius:5px; color:#FF0038; font-size:25px; width: 90%; margin: auto; margin-bottom:7px; background: #fff; border:1px solid #E0E0E0">
+                        <input id="email" type="text" placeholder="Email address" ng-model="user.username" style="padding-left:20px; color: #000" required>
+            </label>
+            <label class="item item-input ion-android-lock" style="border-radius:5px; font-size:25px;  border-top: none; width: 90%; margin: auto; background: #fff; color:#FF0038; border:1px solid #E0E0E0">
+                        <input id="password" type="password" placeholder="Password" ng-model="user.password" style="padding-left:20px; color: #fff; background: transparent; color:#000" required>
+            </label>
+            </div>
+            <div class="padding">
+                <center><a href="#" ng-click="login(user)" class="button button-balanced mdl-js-button mdl-js-ripple-effect" 
+                style="color:#fff; font-size:15px; min-height:42px; margin-top:-20px; margin-bottom:10px; background:#FF0038; text-transform:none; padding-top:0; padding-bottom:0">Login</a></center>
+                <a class="item" style="color:#000; text-decoration: underline; text-align:center; margin-top:-15px; border:none">
+                Forgot your password ?
+                </a>
+            </div>
+       </div>
+    </form>
+</ion-content>
+</ion-view>

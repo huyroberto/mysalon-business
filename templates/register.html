@@ -1,0 +1,42 @@
+<style>
+    .checkbox input:checked:before,
+  .checkbox input:checked + .checkbox-icon:before {
+    background: green;
+    border-color: green; }
+    
+    .checkbox input:before, .checkbox-icon:before {
+        background: transparent;
+    }
+</style>
+<ion-view title="My Salon">
+   <ion-content>
+    <form style="height: 100%; background: #fff;">
+        <!--<div class="login-header" style="margin-top:-30px; padding-top:10px;">  
+            My Salon
+        </div>-->
+            <h4 style="color:#fff; text-align:center; padding-top:10px;  margin-top:10px">
+                <img src="img/logo.png" style="width:120px;">     
+            </h4>
+        <div class="list">
+            <label class="item item-input ion-android-person" style="border-radius:5px; color:#FF0038; font-size:25px; width: 90%; margin: auto; margin-bottom:7px; background: #fff; border:1px solid #E0E0E0">
+                    <input id="email" ng-model="user.email" type="text" placeholder="Email address"  style="padding-left:20px; color: #000" required>
+           </label>
+          <label class="item item-input ion-android-unlock" style="border-radius:5px; color:#FF0038; font-size:25px; width: 90%; margin: auto; margin-bottom:7px; background: #fff; border:1px solid #E0E0E0">
+                    <input id="password" ng-model="user.password" type="password" placeholder="Password"  style="padding-left:20px; ccolor: #000; background: transparent;" required>
+          </label>
+          <label class="item item-input ion-android-lock" style="border-radius:5px; color:#FF0038; font-size:25px; width: 90%; margin: auto; margin-bottom:7px; background: #fff; border:1px solid #E0E0E0">
+                    <input id="repassword"  type="password" placeholder="Re-type password"  style="padding-left:20px; color: #000" required>
+           </label>
+          <label class="item item-input ion-happy-outline" style="border-radius:5px; color:#FF0038; font-size:25px; width: 90%; margin: auto; margin-bottom:7px; background: #fff; border:1px solid #E0E0E0">
+                    <input  id="name" ng-model="user.name" type="text" placeholder="Name" style="padding-left:20px; color: #000; background: transparent;" required>
+          </label>
+          <label class="item item-input ion-android-mail" style="border-radius:5px; color:#FF0038; font-size:25px; width: 90%; margin: auto; margin-bottom:7px; background: #fff; border:1px solid #E0E0E0">
+                    <input  id="address" ng-model="user.address" type="text" placeholder="Address"  style="padding-left:20px; color: #000" required>
+           </label>
+        </div>
+        <div class="padding" style="margin-top:-30px">
+            <center><button id="registerd" ng-click="register(user)" class="button button-balanced mdl-js-button mdl-js-ripple-effect" style="color:#fff; font-size:15px; margin-top:10px; margin-bottom:10px; background:#FF0038; text-transform:none; padding-top:0; padding-bottom:0">Register</button></center>
+        </div>
+    </form>
+</ion-content>
+</ion-view>

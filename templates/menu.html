@@ -1,0 +1,49 @@
+﻿<style>
+    .tab-item, .tab-item{
+        color: #929292;
+        opacity: .7;
+    }
+    .tab-item.tab-item-active, .tab-item.active, .tab-item.activated {
+        opacity: 1;
+        color:red;
+    }
+</style>
+<ion-side-menus enable-menu-with-back-views="false">
+    <ion-side-menu-content>
+        <ion-nav-bar class="bar-assertive">
+            <ion-nav-back-button class="button-clear">
+                <i class="icon ion-ios-arrow-back"></i> Back
+            </ion-nav-back-button>
+            <ion-nav-buttons side="left">
+                <button class="button button-icon button-clear ion-navicon" menu-toggle="left"></button>
+            </ion-nav-buttons>
+            <!--<ion-nav-buttons side="right">
+                <button class="button button-icon button-clear ion-android-more-vertical" id="menu-popover" ng-click="popover.show($event)"></button>
+            </ion-nav-buttons>-->
+        </ion-nav-bar>
+        <ion-nav-view name="menuContent">
+            <!-- TABS -->
+            <ion-tabs ng-class="{'tabs-item-hide': hideTabs}">
+
+            <ion-tab title="Home" icon-off="ion-ios-home" icon-on="ion-ios-home" href="#/app/home">
+                <ion-nav-view name="tab-search"></ion-nav-view>
+            </ion-tab>
+
+            <ion-tab title="My Salon" icon-off="ion-ios-calendar-outline" icon-on="ion-ios-calendar-outline" href="#/app/my-salon">
+                <ion-nav-view name="tab-browse"></ion-nav-view>
+            </ion-tab>
+
+            <ion-tab title="Messages" icon-off="ion-ios-people" icon-on="ion-ios-people" href="#/app/messager">
+                <ion-nav-view name="tab-playlists"></ion-nav-view>
+            </ion-tab>
+
+            <ion-tab title="Settings" icon-off="ion-ios-cog-outline" icon-on="ion-ios-cog-outline" href="#/app/setting">
+                <ion-nav-view name="tab-playlists"></ion-nav-view>
+            </ion-tab>
+
+            </ion-tabs>
+        </ion-nav-view> 
+    </ion-side-menu-content>
+</ion-side-menus>
+
+
