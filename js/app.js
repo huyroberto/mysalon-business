@@ -123,7 +123,7 @@ app.config(function ($stateProvider, $urlRouterProvider) {
         views: {
             'menuContent': {
                 templateUrl: 'templates/myprofile.html',
-                // controller: 'MysalonCtrl'
+                controller: 'MyProfileCtrl'
             }
         }
     })

@@ -80,8 +80,8 @@
                     <label class="row-title">Service</label>
                 </div>
                 <div class="col row-data">
-                    <select style="color:#4C91E3; text-align:center; border:1px solid #E3E2E5; border-left:none; border-top:none; border-right:none; font-weight:100">
-                        <option value='Hairdresser' checked='true'>Hairdresser</option>
+                    <select ng-model='data.singleSelect' name="singleSelect"  style="color:#4C91E3; text-align:center; border:1px solid #E3E2E5; border-left:none; border-top:none; border-right:none; font-weight:100">
+                        <option value='Hairdresser' >Hairdresser</option>
                         <option value='Nailist'>Nailist</option>
                         <option value='Barber'>Barber</option>
                         <option value='Beautician'>Beautician</option>
@@ -91,16 +91,16 @@
             </div>
             <div class="row bottom-line as">
                 <div class="col col-33">
-                    <label class="row-title">Phone</label>
+                    <label class="row-title">Password</label>
                 </div>
                 <div class="col row-data">
-                    <input type="text" placeholder="Your phone" ng-model="user_profile.mobile" required>
+                    <input type="password" ng-model="user_profile.password" required>
                 </div>
             </div>
             <div class="row as">
                 <div class="col">
                     <center>
-                        <a ng-href="#" class="button waves-effect waves-light button-full button-assertive" style="margin-top:40px; padding-left:0px; padding-right:0px; width:40%;text-transform:none; color:#fff; font-size:22px; text-align:center; box-shadow:#FF0038; border:1px solid #929292; background:#929292; font-weight:100">
+                        <a ng-click='save_profile()' class="button waves-effect waves-light button-full button-assertive" style="margin-top:40px; padding-left:0px; padding-right:0px; width:40%;text-transform:none; color:#fff; font-size:22px; text-align:center; box-shadow:#FF0038; border:1px solid #929292; background:#929292; font-weight:100">
                                     Save
                                     </a>
                     </center>
