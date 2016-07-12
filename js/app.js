@@ -70,16 +70,15 @@ app.config(function ($stateProvider, $urlRouterProvider) {
         }    
     })
     
-    .state('app.mysalon', {
-        url: '/my-salon',
+     .state('app.schedule', {
+        url: '/schedule',
         views: {
             'menuContent': {
-                templateUrl: 'templates/mysalon.html',
-                // controller: 'MysalonCtrl'
+                templateUrl: 'templates/schedule.html',
+                // controller: 'ScheduleCtrl'
             }
         }
     })
-
     .state('app.messager', {
         url: '/messager',
         views: {

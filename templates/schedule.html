@@ -1,0 +1,35 @@
+<style>
+    .as{
+        vertical-align: middle;
+        font-size: 18px;
+        font-weight: 700;
+    }
+    .list .item.item-accordion {
+    line-height: 38px;
+    padding-top: 0;
+    padding-bottom: 0;
+    transition: 0.09s all linear;
+    }
+    .list .item.item-accordion.ng-hide {
+    line-height: 0px;
+    }
+    .list .item.item-accordion.ng-hide-add,
+    .list .item.item-accordion.ng-hide-remove {
+    display: block !important;
+    }
+</style>
+<ion-view title="Schedule" hide-back-button="true">
+   <ion-content scroll="true">
+        <!--<div class="login-header" style="padding-top:10px;">  
+                    My Salon
+                </div>-->
+                    <form  style="height: 100%; background: #fff; background-size: cover;">
+
+                        <div class="padding">
+                                <a ng-click="openDatePicker()" class="button waves-effect waves-light button-full button-assertive" style="margin-top:10px; width:55%;text-transform:none; color:#fff; font-size:18px; text-align:center; background:#FF0038; box-shadow:none; border:1px solid #E0E0E0;">
+                                    Add Salon
+                                </a>
+                        </div>     
+                </form>
+</ion-content>
+</ion-view>

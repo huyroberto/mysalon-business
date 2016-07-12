@@ -7,6 +7,13 @@
         opacity: 1;
         color:red;
     }
+    .tabs-positive > .tabs,
+    .tabs.tabs-positive {
+     border-color: transparent;
+     background-color: #fff; 
+     background-image: linear-gradient(0deg, #E3E2E5, #E3E2E5 50%, transparent 0%); 
+    color: #fff;
+    }
 </style>
 <ion-side-menus enable-menu-with-back-views="false">
     <ion-side-menu-content>
@@ -23,17 +30,17 @@
         </ion-nav-bar>
         <ion-nav-view name="menuContent">
             <!-- TABS -->
-            <ion-tabs ng-class="{'tabs-item-hide': hideTabs}">
+            <ion-tabs ng-class="{'tabs-item-hide': hideTabs}" class="tabs-positive tabs-icon-top">
 
             <ion-tab title="Home" icon-off="ion-ios-home" icon-on="ion-ios-home" href="#/app/home">
                 <ion-nav-view name="tab-search"></ion-nav-view>
             </ion-tab>
 
-            <ion-tab title="My Salon" icon-off="ion-ios-calendar-outline" icon-on="ion-ios-calendar-outline" href="#/app/my-salon">
+            <ion-tab title="Schedule" icon-off="ion-ios-calendar-outline" icon-on="ion-ios-calendar-outline" href="#/app/schedule">
                 <ion-nav-view name="tab-browse"></ion-nav-view>
             </ion-tab>
 
-            <ion-tab title="Messages" icon-off="ion-ios-people" icon-on="ion-ios-people" href="#/app/messager">
+            <ion-tab title="Client" icon-off="ion-ios-people" icon-on="ion-ios-people" href="#/app/messager">
                 <ion-nav-view name="tab-playlists"></ion-nav-view>
             </ion-tab>
 
