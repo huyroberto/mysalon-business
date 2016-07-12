@@ -1,8 +1,8 @@
 <style>
     .as{
         vertical-align: middle;
-        font-size: 18px;
-        font-weight: 700;
+        font-size: 17px;
+        font-weight: 100;
     }
 </style>
 <ion-view title="Settings" hide-back-button="true">
@@ -149,50 +149,35 @@
                         <div  style="height:20%; background:#F5F5F5; padding-top:4%; padding-left:5%; padding-bottom:5%; border-bottom: 1px solid #E3E2E5; border-top: 1px solid #E3E2E5">
                                Other
                         </div>
-                        <table style="width:100%;">
-                            <tr>
-                                <td style="width:0%;">
-                                </td>
-                                <td class="as" style="border:1px solid #E3E2E5; border-left:none; border-right:none; border-top:none; font-weight:100; padding-top:10px; padding-bottom:10px; padding-left:10px">
-                                   Terms of use
-                                   <i class="ion-ios-information-outline" style="float:right; margin-right:10px; font-size:23px; color:#007AFF"></i>
-                                </td>
-                            </tr>
-                            <tr>
-                                <td style="width:0%;">
-                                </td>
-                                <td class="as" style="border:1px solid #E3E2E5; border-left:none; font-weight:100; padding-top:10px; padding-bottom:10px; padding-left:10px">
-                                    Privacy Policy
-                                 <i class="ion-ios-information-outline" style="float:right; margin-right:10px; font-size:23px; color:#007AFF"></i>
-                                </td>
-                            </tr>
-                            <tr>
-                                <td style="width:0%;">
-                                </td>
-                                <td class="as" style="border:1px solid #E3E2E5; border-left:none; border-right:none; border-top:none; font-weight:100; padding-top:10px; padding-bottom:10px; padding-left:10px">
-                                    Ask a question
-                                   <i class="ion-ios-information-outline" style="float:right; margin-right:10px; font-size:23px; color:#007AFF"></i>
-                                </td>
-                            </tr>
-                            <tr>
-                                <td style="width:0%;">
-                                </td>
-                                <td class="as" style="border:1px solid #E3E2E5; border-left:none; font-weight:100; padding-top:10px; padding-bottom:10px; padding-left:10px">
-                                    Write a review
-                                <i class="ion-ios-information-outline" style="float:right; margin-right:10px; font-size:23px; color:#007AFF"></i>
-                                </td>
-                            </tr>
-                            <tr>
-                                <td style="width:0%;">
-                                </td>
-                                <td class="as" style="border:1px solid #E3E2E5; border-left:none; border-right:none; border-top:none; font-weight:100; padding-top:10px; padding-bottom:10px; padding-left:10px">
-                                   <a ng-click="showAlert()"> App version
-                                     <i class="ion-ios-information-outline" style="float:right; margin-right:10px; font-size:23px; color:#007AFF"></i>
-                                   </a>
-                                </td>
-                            </tr>
-                        </table>
-                        <div  style="height:20%; background:#F5F5F5; padding-top:4%; padding-left:6%; padding-bottom:5%; border-bottom: 1px solid #E3E2E5; border-top:none; margin-bottom:50px">
+
+                        <div class="list" style="margin-bottom:0">
+                            <a class="item item-icon-right as" href="#" style="border-bottom:1px solid #E3E2E5; font-size: 17px; font-weight: 100;">
+                                <i hidden></i>
+                                Terms of use
+                                <i class="icon ion-ios-information-outline" style="color:#007AFF"></i>
+                            </a>
+
+                            <a class="item item-icon-right as" href="#" style="border-bottom:1px solid #E3E2E5; font-size: 17px; font-weight: 100;">
+                                Privacy Policy
+                                <i class="icon ion-ios-information-outline" style="color:#007AFF"></i>
+                            </a>
+
+                            <a class="item item-icon-right as" href="#" style="border-bottom:1px solid #E3E2E5; font-size: 17px; font-weight: 100;">
+                                Ask a question
+                                <i class="icon ion-ios-information-outline" style="color:#007AFF"></i>
+                            </a>
+
+                            <a class="item item-icon-right as" href="#" style="border-bottom:1px solid #E3E2E5; font-size: 17px; font-weight: 100;">
+                                Write a review
+                                <i class="icon ion-ios-information-outline" style="color:#007AFF"></i>
+                            </a>
+
+                            <a class="item item-icon-right as" href="#" style="border-bottom:1px solid #E3E2E5; font-size: 17px; font-weight: 100;" ng-click="showAlert()">
+                                App version
+                                <i class="icon ion-ios-information-outline" style="color:#007AFF"></i>
+                            </a>
+                        </div>
+                        <div  style="height:35%; background:#F5F5F5; padding-top:0; padding-left:6%; padding-bottom:5%; border-bottom: none; border-top:none; margin-bottom:50px">
                                <center>
                                     <a ng-href="#/app/login" class="button waves-effect waves-light button-full button-assertive" style="padding-left:0px; padding-right:0px; width:40%;text-transform:none; color:#FF0038; font-size:17px; text-align:center; box-shadow:#FF0038; border:1px solid #FF0038; background:#fff; font-weight:100">
                                     Log Out</a>
