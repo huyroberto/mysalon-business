@@ -17,19 +17,159 @@
     .list .item.item-accordion.ng-hide-remove {
     display: block !important;
     }
+
+    * {
+	font-family: Arial, sans;
+	margin: 0;
+	padding: 0;
+	box-sizing: border-box;
+	-moz-box-sizing: border-box;
+    }
+
+    h1 {
+        margin: 1em 0;
+        text-align: center;
+    }
+
+    #container {
+        margin: 0 auto;
+        width: 100%;  /* Ancho del contenedor */
+    }
+
+    #container input {
+        height: 2.5em;
+        visibility: hidden;
+    }
+
+    #container label {
+        background: #f9f9f9;  /* Fondo de las pestañas */
+        border: 1px solid #FF2C55;
+        color: #FF2C55;  /* Color del texto de las pestañas */
+        cursor: pointer;
+        display: block;
+        float: left;
+        font-size: 1em;  /* Tamaño del texto de las pestañas */
+        height: 2.5em;
+        line-height: 2.5em;
+        margin-right: 0;
+        padding: 0 1.5em;
+        text-align: center;
+    }
+
+    #container input:hover + label {
+        background: #ddd;  /* Fondo de las pestañas al pasar el cursor por encima */
+        color: #666;  /* Color del texto de las pestañas al pasar el cursor por encima */
+    }
+
+    #container input:checked + label {
+        background: #FF2C55;  /* Fondo de las pestañas al presionar */
+        color: #fff; /* Color de las pestañas al presionar */
+        position: relative;
+        z-index: 6;
+        /*
+        -webkit-transition: .1s;
+        -moz-transition: .1s;
+        -o-transition: .1s;
+        -ms-transition: .1s;
+        */
+    }
+
+    #content {
+        background: #f1f1f1;  /* Fondo del contenido */
+        border-radius: 0 .25em .25em .25em;
+        min-height: 20em;  /* Alto del contenido */
+        position: relative;
+        width: 100%;
+        z-index: 5;
+    }
+
+    #content div {
+        opacity: 0;
+        padding: 1.5em;
+        position: absolute;
+        z-index: -100;
+        /*
+        transition: all linear 0.1s;
+        */
+    }
+
+    #content-1 p {
+        clear: both;
+        margin-bottom: 1em;
+    }
+    #content-1 p.left img {
+        float: left;
+        margin-right: 1em;
+    }
+    #content-1 p.last {
+        margin-bottom: 0;
+    }
+
+    #content-2 p {
+        float: left;
+        width: 48.5%;
+    }
+    #content-2 p.column-right {
+        margin-left: 3%;
+    }
+    #content-2 p img {
+        display: block;
+        margin: 0 auto 1em auto;
+    }
+    #content-3 p,
+    #content-3 ul {
+        margin-bottom: 1em;
+    }
+    #content-3 ul {
+        margin-left: 2em;
+    }
+
+    #container input#tab-1:checked ~ #content #content-1,
+    #container input#tab-2:checked ~ #content #content-2,
+    #container input#tab-3:checked ~ #content #content-3 {
+        opacity: 1;
+        z-index: 100;
+    }
+
+    /*input.visible {
+    visibility: visible !important;
+    }*/
 </style>
 <ion-view title="Schedule" hide-back-button="true">
    <ion-content scroll="true">
-        <!--<div class="login-header" style="padding-top:10px;">  
-                    My Salon
-                </div>-->
-                    <form  style="height: 100%; background: #fff; background-size: cover;">
+       
+       <!--Contenedor-->
+	<div id="container">
+        <div class="row">
+        <div class="col">
+            <center>
+            <!--Pestaña 1 activa por defecto-->
+            <input id="tab-1" type="radio" name="tab-group" checked="checked" style="margin-bottom:20px"/>
+            <label for="tab-1" style="margin-top:10px; width:120px; border-radius: .25em 0 0 .25em;">Tab 1</label>
+            <!--Pestaña 2 inactiva por defecto-->
+            <input id="tab-2" type="radio" name="tab-group" />
+            <label for="tab-2" style="margin-top:10px; margin-left:0; width:120px; border-radius: 0 .25em .25em 0;">Tab 2</label>
 
-                        <div class="padding">
-                                <a ng-click="openDatePicker()" class="button waves-effect waves-light button-full button-assertive" style="margin-top:10px; width:55%;text-transform:none; color:#fff; font-size:18px; text-align:center; background:#FF0038; box-shadow:none; border:1px solid #E0E0E0;">
-                                    Add Salon
-                                </a>
-                        </div>     
-                </form>
-</ion-content>
+            <a ng-href="#/app/add-reservation" style="color:#4A90E2; text-decoration: none;display: inline-flex; margin-left:-30px">
+            <i class="ion-ios-plus" style="color:#FF2C55; font-size:19px">
+                <span style="margin-left:1px">Add</span>
+             </i>
+        </a>
+              <!--Contenido a mostrar/ocultar-->
+            <div id="content">
+                <!--Contenido de la Pestaña 1-->
+                <div id="content-1">
+                    <p class="left">                                
+                    </p>
+                </div>
+                <!--Contenido de la Pestaña 2-->
+                <div id="content-2">
+                    <p class="left"><img src="http://ximg.es/200x150" alt="">Lorem ipsum dolor sit amet, consectetur adipisicing elit. Sed, molestiae, officia repellendus quasi cumque dolor eius deserunt possimus aliquid neque nam assumenda veniam soluta enim commodi aperiam reprehenderit quia incidunt.</p>
+                </div>
+            </div>
+            </center>
+        </div>
+	</div>
+	</div>
+    </ion-content>
 </ion-view>
