@@ -42,7 +42,7 @@
     }
 
     #container label {
-        background: #f9f9f9;  /* Fondo de las pestañas */
+        background: transparent;  /* Fondo de las pestañas */
         border: 1px solid #FF2C55;
         color: #FF2C55;  /* Color del texto de las pestañas */
         cursor: pointer;
@@ -75,7 +75,7 @@
     }
 
     #content {
-        background: #f1f1f1;  /* Fondo del contenido */
+        background: transparent;  /* Fondo del contenido */
         border-radius: 0 .25em .25em .25em;
         min-height: 20em;  /* Alto del contenido */
         position: relative;
@@ -151,7 +151,7 @@
             <label for="tab-2" style="margin-top:10px; margin-left:0; width:120px; border-radius: 0 .25em .25em 0;">Tab 2</label>
 
             <a ng-href="#/app/add-reservation" style="color:#4A90E2; text-decoration: none;display: inline-flex; margin-left:-30px">
-            <i class="ion-ios-plus" style="color:#FF2C55; font-size:19px">
+            <i class="ion-ios-plus" style="color:#FF2C55; font-size:23px">
                 <span style="margin-left:1px">Add</span>
              </i>
         </a>
@@ -159,7 +159,8 @@
             <div id="content">
                 <!--Contenido de la Pestaña 1-->
                 <div id="content-1">
-                    <p class="left">                                
+                    <p class="left">   
+                        <input placeholder="abc">                             
                     </p>
                 </div>
                 <!--Contenido de la Pestaña 2-->
