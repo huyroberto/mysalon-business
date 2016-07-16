@@ -1,5 +1,15 @@
 /* Empty. Add your own CSS if you like */
 /* Utilities */
+@font-face {
+  font-family: SalonFont;
+  src: url('DarkRoast.ttf') format("opentype");
+  font-weight: normal;
+  font-style: normal; }
+
+.bar .title .home{
+    font-family: SalonFont;
+        font-size: 30px;
+}
 
 .link {
     color: #116262;

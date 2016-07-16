@@ -54,7 +54,7 @@ app.controller('AppCtrl', function ($scope, $ionicModal, $ionicPopover, $timeout
     
 
 })
-    .controller('LoginCtrl', function ($scope, $state, $window, $rootScope, $stateParams, $ionicLoading, $q) {
+    .controller('LoginCtrl', function ($scope, $state, $window, $rootScope, $stateParams, $ionicPopup,$ionicLoading, $q, ProfileService) {
         $rootScope.toggledrag = false;
         $rootScope.islogin = false;
         $rootScope.show = false;
@@ -71,38 +71,46 @@ app.controller('AppCtrl', function ($scope, $ionicModal, $ionicPopover, $timeout
             $rootScope.islogin = true;
             console.log('logged user:',user);
             $rootScope.user_profile = user;
+            ProfileService.get_profile(user.email).then(function (response) {
+                if(response.data){
+                    console.log('Remote User data:', response.data.data);
+                    $rootScope.user_profile = response.data.data;
+                }
+            });
+            
             $state.go('app.home');
         }
         function gotError(err) { // see more on error handling
-            if (err.code != 0) {
-                $rootScope.islogin = false;
-                //createPopup(err.message, 'error');
-                console.log("error message - " + err.message);
-                console.log("error code - " + err.statusCode);
-            }
+            var alertPopup = $ionicPopup.alert({
+                title: 'Login Error!',
+                template: '<center>' + err.message + '</center>'
+            });
         }
         console.log('Load login page');
 
     })
-    .controller('RegisterCtrl', function ($scope, $state, $window, $rootScope, $stateParams) {
+    .controller('RegisterCtrl', function ($scope, $state, $window, $ionicPopup,$rootScope, $stateParams, ProfileService) {
 
         $scope.register = function (user_data) {
+            user_data.customer_type = 'PERSONAL';
             var user = new Backendless.User();
             user['email'] = user_data.email;
             user['password'] = user_data.password;
             user['name'] = user_data.name;
             user['address'] = user_data.address;
-            user['customer_type'] = 'PERSONAL';
+            user['customer_type'] = user_data.customer_type;
+
+            ProfileService.update_profile(user_data).then(function(response){
+                console.log('Profile Register: ',response.data);
+            })
             console.log(Backendless.UserService.register(user, new Backendless.Async(userRegistered, gotErrorRegister)));
         }
 
         function gotErrorRegister(err) { // see more on error handling
-            // $('input').each(function(){
-            //     if(err.message.indexOf($(this).attr('id')) != -1){
-            //         $(this).addClass('redBorder');
-            //     }
-            // });
-            // createPopup(err.message, 'error');
+            var alertPopup = $ionicPopup.alert({
+                title: 'Register Error!',
+                template: '<center>' + err.message + '</center>'
+            });
             console.log("error message - " + err.message);
             console.log("error code - " + err.statusCode);
         }
