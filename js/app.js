@@ -118,6 +118,17 @@ app.config(function ($stateProvider, $urlRouterProvider) {
             }
         }
     })
+
+    .state('app.addclient', {
+        url: '/add-client',
+        views: {
+            'menuContent': {
+                templateUrl: 'templates/addclient.html',
+                // controller: 'MysalonCtrl'
+            }
+        }
+    })
+
     .state('app.myprofile', {
         url: '/my-profile',
         views: {

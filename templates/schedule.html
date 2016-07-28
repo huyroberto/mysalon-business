@@ -142,15 +142,16 @@
 	<div id="container">
         <div class="row">
         <div class="col">
+            <div class="myCalendar" id="myCalendar-1"></div>
             <center>
             <!--Pestaña 1 activa por defecto-->
             <input id="tab-1" type="radio" name="tab-group" checked="checked" style="margin-bottom:20px"/>
-            <label for="tab-1" style="margin-top:10px; width:120px; border-radius: .25em 0 0 .25em;">Tab 1</label>
+            <label for="tab-1" style="margin-top:10px; width:120px; border-radius: .25em 0 0 .25em;">Calendar</label>
             <!--Pestaña 2 inactiva por defecto-->
             <input id="tab-2" type="radio" name="tab-group" />
-            <label for="tab-2" style="margin-top:10px; margin-left:0; width:120px; border-radius: 0 .25em .25em 0;">Tab 2</label>
+            <label for="tab-2" style="margin-top:10px; margin-left:0; width:120px; border-radius: 0 .25em .25em 0;">List</label>
 
-            <a ng-href="#/app/add-reservation" style="color:#4A90E2; text-decoration: none;display: inline-flex; margin-left:-30px">
+            <a ng-href="#/app/add-reservation" style="color:#4A90E2; text-decoration: none;display: inline-flex; margin-left:-33px">
             <i class="ion-ios-plus" style="color:#FF2C55; font-size:23px">
                 <span style="margin-left:1px">Add</span>
              </i>
@@ -165,12 +166,26 @@
                 </div>
                 <!--Contenido de la Pestaña 2-->
                 <div id="content-2">
-                    <p class="left"><img src="http://ximg.es/200x150" alt="">Lorem ipsum dolor sit amet, consectetur adipisicing elit. Sed, molestiae, officia repellendus quasi cumque dolor eius deserunt possimus aliquid neque nam assumenda veniam soluta enim commodi aperiam reprehenderit quia incidunt.</p>
+                    <p class="left">
+                        <img src="http://ximg.es/200x150" alt="">Lorem ipsum dolor sit amet, consectetur adipisicing elit. Sed, molestiae, officia repellendus quasi cumque dolor eius deserunt possimus aliquid neque nam assumenda veniam soluta enim commodi aperiam reprehenderit quia incidunt.</p>
                 </div>
             </div>
             </center>
         </div>
 	</div>
 	</div>
+     <script type="text/javascript-lazy">
+          
+         $("#myCalendar-1").ionCalendar({
+    lang: "ru",                     // language
+    sundayFirst: false,             // first week day
+    years: "80",                    // years diapason
+    format: "DD.MM.YYYY",           // date format
+    onClick: function(date){        // click on day returns date
+        console.log(date);
+    }
+});
+           
+    </script>
     </ion-content>
 </ion-view>

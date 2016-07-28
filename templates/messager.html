@@ -1,47 +1,82 @@
 <style>
-    .as{
+    .as {
         vertical-align: middle;
         font-size: 18px;
         font-weight: 700;
     }
+    
+    input::-webkit-input-placeholder {
+        /* Chrome/Opera/Safari */
+        color: #AEAEB2;
+    }
+    
+   input::-moz-placeholder {
+        /* Firefox 19+ */
+        color: #AEAEB2;
+    }
+    
+    input:-ms-input-placeholder {
+        /* IE 10+ */
+        color: #AEAEB2;
+    }
+    
+    input:-moz-placeholder {
+        /* Firefox 18- */
+        color: #AEAEB2;
+    }
 </style>
-<ion-view title="Chat list" hide-back-button="true">
-   <ion-content scroll="true">
+<ion-view title="Client" hide-back-button="true"  style="background:#F5F5F5;">
+    <ion-content scroll="true">
         <!--<div class="login-header" style="padding-top:10px;">  
                     Chat list
                 </div>-->
-                    <form  style="height: 100%; background: #fff; background-size: cover;">
-                        <div class="padding">
-                            <center>
-                                <label class="item item-input ion-ios-search" style="border-radius:5px; font-size:25px; width: 96%; height:35px; margin-top: 3%; margin-bottom:7px; background: #EBEBEB; border:1px solid #E0E0E0">
-                                            <input id="email" type="text" placeholder="Search" style="padding-left:10px; color: #000" required>
-                                </label>
-                            </center>
-                        </div>
-                        <center>
-                            <div class="list">
-                                <a ng-href="#" class="item item-avatar" href="#" style="border:1px solid #E3E2E5; border-left:none; border-right:none; padding-left:65px">
-                                <img src="img/g1.jpg">
-                                <h2 style="margin-top:-8px">Imamura Chiharu</h2>
-                                <p style="color:#9B9B9B; font-size:14px; font-weight:200">Hi, thank you for the haircut yesterday, it is very lovely</p>
-                                <h4 style="font-style: italic; color:#ed3b3b; margin-bottom:-5px">Tuesday</h4>
-                                </a>
-                                <a class="item item-avatar" href="#" style="border:1px solid #E3E2E5; border-left:none; border-right:none; padding-left:65px">
-                                <img src="img/g2.jpg">
-                                <h2 style="margin-top:-8px">Takahashi Keisuke</h2>
-                                <p style="color:#9B9B9B; font-size:14px; font-weight:200">Thank you for coming yesterday. I am looking forward to see you</p>
-                                <h4 style="font-style: italic; color:#ed3b3b; margin-bottom:-5px">4/25</h4>
-                                </a>
-                                <a class="item item-avatar" href="#" style="border:1px solid #E3E2E5; border-left:none; border-right:none; padding-left:65px">
-                                <img src="img/boy.jpg">
-                                <h2 style="margin-top:-8px">Tamura Erika</h2>
-                                <p style="color:#9B9B9B; font-size:14px; font-weight:200">By the way, lest try this new treatment next time.</p>
-                                <h4 style="font-style: italic; color:#ed3b3b; margin-bottom:-5px">4/20</h4>
-                                </a>
-                            </div>
-                        </center>
-                        
-                        <!--<table style="width:100%; border:1px solid #E3E2E5; border-left:none; border-right:none">
+        <form style="height: 100%; background-size: cover; border-top: 1px solid #E3E2E5">
+            <center>
+                <label class="item item-input ion-ios-search" style="border-radius:5px; font-size:25px; width: 96%; height:35px; margin-top: 2%; margin-bottom:7px; background: #fff; border:1px solid #E0E0E0">
+                     <input id="email" type="text" placeholder="Search" style="padding-left:10px; color: #000" required>
+                </label>
+            </center>
+                <center>
+                            <a class="item as" href="#/app/add-client" style="border:none; font-size: 17px; font-weight: 100;">
+                                 <i class="ion-ios-plus" style="font-size:25px; color:red; margin-left:20px"><span style="color:#4A90E2; font-family: sans-serif; font-size: 22px; padding-left: 10px; font-weight: 100;">Add</span></i>
+                            </a>
+                </center>
+            <center>
+                <div class="list" style="background:#fff">
+                    <div class="item item-divider" style="background:#F2F2F2; border:1px solid #E3E2E5; border-left:none; border-right:none; font-size:25px; line-height:30px">
+                        A
+                    </div>
+                    <a class="item item-icon-left item-icon-right" style="border:1px solid #E3E2E5; border-left:none; border-right:none; padding-left:65px; color:#929292" href="#">
+                        Aoki Nana
+                        <i class="icon ion-ios-person"></i>
+                        <i class="icon ion-ios-chatbubble-outline"></i>
+                    </a>
+
+                    <a class="item item-icon-left item-icon-right" style="border:1px solid #E3E2E5; border-left:none; border-right:none; padding-left:65px; color:#929292" href="#">
+                        Yamada Mariko
+                        <i class="icon ion-ios-person"></i>
+                        <i class="icon ion-ios-chatbubble-outline"></i>
+                    </a>
+                    <div class="item item-divider" style="background:#F2F2F2; border:1px solid #E3E2E5; border-left:none; border-right:none; font-size:25px; line-height:30px">
+                        B
+                    </div>
+                    <a class="item item-icon-left item-icon-right" style="border:1px solid #E3E2E5; border-left:none; border-right:none; padding-left:65px; color:#929292" href="#">
+                        Ikejri Kousuke
+                        <i class="icon ion-ios-person"></i>
+                        <i class="icon ion-ios-chatbubble-outline"></i>
+                    </a>
+                    <div class="item item-divider" style="background:#F2F2F2; border:1px solid #E3E2E5; border-left:none; border-right:none; font-size:25px; line-height:30px">
+                        N
+                    </div>
+                    <a class="item item-icon-left item-icon-right" style="border:1px solid #E3E2E5; border-left:none; border-right:none; padding-left:65px; color:#929292" href="#">
+                        Naito Risa
+                        <i class="icon ion-ios-person"></i>
+                        <i class="icon ion-ios-chatbubble-outline"></i>
+                    </a>
+                </div>
+            </center>
+
+            <!--<table style="width:100%; border:1px solid #E3E2E5; border-left:none; border-right:none">
                             <tr>
                                 <td style="width:2%; padding-left:10px">
                                 </td>
@@ -73,7 +108,7 @@
                                </td>
                             </tr>
                         </table>-->
-                    
-                </form>
-</ion-content>
+
+        </form>
+    </ion-content>
 </ion-view>
