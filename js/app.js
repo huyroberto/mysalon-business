@@ -81,7 +81,7 @@ app.config(function ($stateProvider, $urlRouterProvider) {
         views: {
             'menuContent': {
                 templateUrl: 'templates/schedule.html',
-                // controller: 'ScheduleCtrl'
+                controller: 'ScheduleCtrl'
             }
         }
     })

@@ -1,133 +1,144 @@
 <style>
-    .as{
+    .as {
         vertical-align: middle;
         font-size: 18px;
         font-weight: 700;
     }
-    input::-webkit-input-placeholder { /* Chrome/Opera/Safari */
-      color: #8E8E93;
+    
+    input::-webkit-input-placeholder {
+        /* Chrome/Opera/Safari */
+        color: #8E8E93;
     }
 </style>
 <ion-view title="Menu" hide-back-button="false">
-   <ion-content scroll="true">
+    <ion-content scroll="true">
         <!--<div class="login-header" style="padding-top:10px;">  
                     My Salon
                 </div>-->
-                    <form  style="height: 100%; background: #fff; background-size: cover;">
-                        <div class="padding">
-                            <center>
-                                <label class="item item-input ion-ios-search" style="border-radius:5px; font-size:25px; width: 96%; height:35px; margin-top: 3%; margin-bottom:7px; background: #E3E2E5; border:1px solid #E0E0E0">
-                                            <input id="email" type="text" placeholder="Search" style="padding-left:10px; color: #000" required>
-                                </label>
-                            </center>
-                        </div>
-                          <table style="width:100%;">
-                            <tr style="border-top:1px solid #E3E2E5">
-                                <td colspan="4"  class="as" style="border:1px solid #E3E2E5; border-left:none; border-right:none; border-top:none; font-size:22px; font-weight:100; color:#4A90E2">
-                    
-                                      <ion-list>
-                                        <div ng-repeat="group in groups">
-                                        <ion-item style="background:#fff; padding-left:0; font-size:19px;" class="item-stable"
-                                                    ng-click="toggleGroup(group)"
-                                                    ng-class="{active: isGroupShown(group)}">
-                                            <i class="ion-ios-plus" style="font-size:25px; color:red; margin-left:20px"></i> <a style="color:#4A90E2; padding-bottom:10px; padding-left:20px"> Add menu </a> 
-                                            <i style="margin-left:50%; color:#A3A3A3" class="icon" ng-class="isGroupShown(group) ? 'ion-ios-arrow-down' : 'ion-ios-arrow-right'"></i>
-                                        </ion-item>
-                                        <ion-item class="item-accordion" ng-show="isGroupShown(group)" style="padding-top:0; padding-bottom:5px">
+        <form style="height: 100%; background: #fff; background-size: cover;">
+            <div class="padding">
+                <center>
+                    <label class="item item-input ion-ios-search" style="border-radius:5px; font-size:25px; width: 96%; height:35px; margin-top: 3%; margin-bottom:7px; background: #E3E2E5; border:1px solid #E0E0E0">
+                                            <select style="padding-left:10px; color: #000">
+                                                <option>Hairdress</option>
+                                            </select>
 
-                                            <table style="width:100%">
-                                                <tr>
-                                                    <td colspan="2">
-                                                            <center>
-                                                                <label class="item item-input" style="border-radius:1px; color:#FF0038; font-size:25px; width: 90%; margin: auto; margin-bottom:0px; background: #fff; border:1px solid #E0E0E0; border-bottom:none">
-                                                                    <input id="email" type="text" placeholder="Service" style="padding-left:0px; color: #000" required>
+                                </label>
+                </center>
+            </div>
+            <table style="width:100%;">
+                <tr style="border-top:1px solid #E3E2E5">
+                    <td colspan="4" class="as" style="border:1px solid #E3E2E5; border-left:none; border-right:none; border-top:none; font-size:22px; font-weight:100; color:#4A90E2">
+
+                        <ion-list>
+                            <div ng-repeat="group in groups">
+                                <ion-item style="background:#fff; padding-left:0; font-size:19px;" class="item-stable" ng-click="toggleGroup(group)" ng-class="{active: isGroupShown(group)}">
+                                    <i class="ion-ios-plus" style="font-size:25px; color:red; margin-left:20px"></i> <a style="color:#4A90E2; padding-bottom:10px; padding-left:20px"> Add menu </a>
+                                    <i style="margin-left:50%; color:#A3A3A3" class="icon" ng-class="isGroupShown(group) ? 'ion-ios-arrow-down' : 'ion-ios-arrow-right'"></i>
+                                </ion-item>
+                                <ion-item class="item-accordion" ng-show="isGroupShown(group)" style="padding-top:0; padding-bottom:5px">
+
+                                    <table style="width:100%">
+                                        <tr>
+                                            <td colspan="2">
+                                                <center>
+                                                    <label class="item item-input" style="border-radius:1px; color:#FF0038; font-size:25px; width: 90%; margin: auto; margin-bottom:0px; background: #fff; border:1px solid #E0E0E0; border-bottom:none">
+                                                                     <select style="padding-left:10px; color: #000">
+                                                <option value='hairdresser'>Hairdress</option>
+                                                <option value='nailist'>Nailist</option>
+                                                <option value='barber'>Barber</option>
+                                                <option value='beatician'>Beautician</option>
+                                                <option value='eye'>Eye lashes</option>
+
+                                            </select>
+
                                                                 </label>
-                                                            </center>
-                                                    </td>
-                                                </tr>
-                                                <tr>
-                                                    <td style="width:50%">
-                                                                <label class="item item-input" style="border-radius:1px; color:#FF0038; font-size:25px; width: 90%; margin: auto; margin-bottom:7px; background: #fff; border:1px solid #E0E0E0; float:right; border-right:none">
+                                                </center>
+                                            </td>
+                                        </tr>
+                                        <tr>
+                                            <td style="width:50%">
+                                                <label class="item item-input" style="border-radius:1px; color:#FF0038; font-size:25px; width: 90%; margin: auto; margin-bottom:7px; background: #fff; border:1px solid #E0E0E0; float:right; border-right:none">
                                                                     <input id="email" type="text" placeholder="Price" style="padding-left:0px; color: #000" required>
                                                                 </label>
-                                                        </td>
-                                                        <td>
-                                                                <label class="item item-input" style="border-radius:1px; color:#FF0038; font-size:25px; width: 90%; margin: auto; margin-bottom:7px; background: #fff; border:1px solid #E0E0E0; float:left; padding-left:0">
+                                            </td>
+                                            <td>
+                                                <label class="item item-input" style="border-radius:1px; color:#FF0038; font-size:25px; width: 90%; margin: auto; margin-bottom:7px; background: #fff; border:1px solid #E0E0E0; float:left; padding-left:0">
                                                                     <input id="email" type="text" placeholder="Time" style="padding-left:15px; color: #000" required>
                                                                 </label>
-                                                        </td>
-                                                </tr>
-                                            </table>
+                                            </td>
+                                        </tr>
+                                    </table>
 
 
-                                        </ion-item>
-                                        </div>
-                                    </ion-list>
+                                </ion-item>
+                            </div>
+                        </ion-list>
 
-                                </td>
-                            </tr>
-                            <tr>
-                                <td style="width:30%; padding-left:10px; padding-top:10px; padding-bottom:10px; font-size:17px">
-                                    Cut
-                                </td>
-                                <td  class="as" style="border:1px solid #E3E2E5; border-left:none; border-right:none; border-top:none; font-weight:100">
-                                $5,000
-                                </td>
-                                 <td style="width:20%; padding-left:10px; padding-top:10px; padding-bottom:10px; border-bottom:1px solid #E3E2E5; font-size:17px">
-                                30 min
-                                </td>
-                                <td style="width:10%; padding-left:10px; padding-top:10px; padding-bottom:10px; border-bottom:1px solid #E3E2E5">
-                                    <i class="ion-ios-arrow-right" style="color:#A3A3A3; font-size:17px"></i>
-                                </td>
-                            </tr>
-                            <tr>
-                                <td style="width:30%; padding-left:10px; padding-top:10px; padding-bottom:10px; font-size:17px">
-                                    Color
-                                </td>
-                                <td  class="as" style="border:1px solid #E3E2E5; border-left:none; border-right:none; border-top:none; font-weight:100">
-                                $12,000
-                                </td>
-                                 <td style="width:20%; padding-left:10px; padding-top:10px; padding-bottom:10px; border-bottom:1px solid #E3E2E5; font-size:17px">
-                                90 min
-                                </td>
-                                <td style="width:10%; padding-left:10px; padding-top:10px; padding-bottom:10px; border-bottom:1px solid #E3E2E5">
-                                    <i class="ion-ios-arrow-right" style="color:#A3A3A3; font-size:17px"></i>
-                                </td>
-                            </tr>
-                            <tr>
-                                <td style="width:30%; padding-left:10px; padding-top:10px; padding-bottom:10px; font-size:17px">
-                                    Perm
-                                </td>
-                                <td class="as" style="border:1px solid #E3E2E5; border-left:none; border-bottom:none; border-right:none; font-weight:100">
-                                    $10,000
-                                </td>
-                                <td style="width:20%; padding-left:10px; padding-top:10px; padding-bottom:10px; border-bottom:1px solid #E3E2E5; font-size:17px">
-                               120 min
-                                </td>
-                                <td style="width:10%; padding-left:10px; padding-top:10px; padding-bottom:10px; border-bottom:1px solid #E3E2E5">
-                                    <i class="ion-ios-arrow-right" style="color:#A3A3A3; font-size:17px"></i>
-                                </td>
-                            </tr>
-                            <tr style="border-bottom:1px solid #E3E2E5">
-                                <td style="width:30%; padding-left:10px; padding-top:10px; padding-bottom:10px; font-size:17px">
-                                    Treatment
-                                </td>
-                                <td class="as" style="border:1px solid #E3E2E5; border-left:none; border-bottom:none; border-right:none; font-weight:100">
-                                    $3,000
-                                </td>
-                                <td style="width:20%; padding-left:10px; padding-top:10px; padding-bottom:10px; font-size:17px">
-                                30 min
-                                </td>
-                                <td style="width:10%; padding-left:10px; padding-top:10px; padding-bottom:10px; border-bottom:1px solid #E3E2E5">
-                                    <i class="ion-ios-arrow-right" style="color:#A3A3A3; font-size:17px"></i>
-                                </td>
-                            </tr>
-                        </table>
-                               <center>
-                                    <a ng-href="#" class="button waves-effect waves-light button-full button-assertive" style="margin-top:40px; padding-left:0px; padding-right:0px; width:40%;text-transform:none; color:#fff; font-size:22px; text-align:center; box-shadow:#FF0038; border:1px solid #929292; background:#929292; font-weight:100">
+                    </td>
+                </tr>
+                <tr>
+                    <td style="width:30%; padding-left:10px; padding-top:10px; padding-bottom:10px; font-size:17px">
+                        Cut
+                    </td>
+                    <td class="as" style="border:1px solid #E3E2E5; border-left:none; border-right:none; border-top:none; font-weight:100">
+                        $5,000
+                    </td>
+                    <td style="width:20%; padding-left:10px; padding-top:10px; padding-bottom:10px; border-bottom:1px solid #E3E2E5; font-size:17px">
+                        30 min
+                    </td>
+                    <td style="width:10%; padding-left:10px; padding-top:10px; padding-bottom:10px; border-bottom:1px solid #E3E2E5">
+                        <i class="ion-ios-arrow-right" style="color:#A3A3A3; font-size:17px"></i>
+                    </td>
+                </tr>
+                <tr>
+                    <td style="width:30%; padding-left:10px; padding-top:10px; padding-bottom:10px; font-size:17px">
+                        Color
+                    </td>
+                    <td class="as" style="border:1px solid #E3E2E5; border-left:none; border-right:none; border-top:none; font-weight:100">
+                        $12,000
+                    </td>
+                    <td style="width:20%; padding-left:10px; padding-top:10px; padding-bottom:10px; border-bottom:1px solid #E3E2E5; font-size:17px">
+                        90 min
+                    </td>
+                    <td style="width:10%; padding-left:10px; padding-top:10px; padding-bottom:10px; border-bottom:1px solid #E3E2E5">
+                        <i class="ion-ios-arrow-right" style="color:#A3A3A3; font-size:17px"></i>
+                    </td>
+                </tr>
+                <tr>
+                    <td style="width:30%; padding-left:10px; padding-top:10px; padding-bottom:10px; font-size:17px">
+                        Perm
+                    </td>
+                    <td class="as" style="border:1px solid #E3E2E5; border-left:none; border-bottom:none; border-right:none; font-weight:100">
+                        $10,000
+                    </td>
+                    <td style="width:20%; padding-left:10px; padding-top:10px; padding-bottom:10px; border-bottom:1px solid #E3E2E5; font-size:17px">
+                        120 min
+                    </td>
+                    <td style="width:10%; padding-left:10px; padding-top:10px; padding-bottom:10px; border-bottom:1px solid #E3E2E5">
+                        <i class="ion-ios-arrow-right" style="color:#A3A3A3; font-size:17px"></i>
+                    </td>
+                </tr>
+                <tr style="border-bottom:1px solid #E3E2E5">
+                    <td style="width:30%; padding-left:10px; padding-top:10px; padding-bottom:10px; font-size:17px">
+                        Treatment
+                    </td>
+                    <td class="as" style="border:1px solid #E3E2E5; border-left:none; border-bottom:none; border-right:none; font-weight:100">
+                        $3,000
+                    </td>
+                    <td style="width:20%; padding-left:10px; padding-top:10px; padding-bottom:10px; font-size:17px">
+                        30 min
+                    </td>
+                    <td style="width:10%; padding-left:10px; padding-top:10px; padding-bottom:10px; border-bottom:1px solid #E3E2E5">
+                        <i class="ion-ios-arrow-right" style="color:#A3A3A3; font-size:17px"></i>
+                    </td>
+                </tr>
+            </table>
+            <center>
+                <a ng-href="#" class="button waves-effect waves-light button-full button-assertive" style="margin-top:40px; padding-left:0px; padding-right:0px; width:40%;text-transform:none; color:#fff; font-size:22px; text-align:center; box-shadow:#FF0038; border:1px solid #929292; background:#929292; font-weight:100">
                                     Save
                                     </a>
-                                </center>
-                </form>
-</ion-content>
+            </center>
+        </form>
+    </ion-content>
 </ion-view>

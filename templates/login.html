@@ -12,19 +12,21 @@
             </h4>
          <div class="padding">
              <center>
-                <a ng-href="#/app/register" class="button waves-effect waves-light button-full button-assertive" style="; width:280px;text-transform:none; color:#000; font-size:17px; opacity:.9; text-align:left; background:#F1F1F1; box-shadow:none; border:1px solid #E0E0E0;"><i class="ion-ios-person" style="color:#FF0038; font-size:22px; padding-right:10px; "></i>Create a New Account</a>
+                <a ng-href="#/app/register" class="button waves-effect waves-light button-full button-assertive" style="width:280px; text-transform:none; color:#000; font-size:17px; opacity:.9; text-align:left; background:#F1F1F1; box-shadow:none; border:1px solid #E0E0E0;"><i class="ion-ios-person" style="color:#FF0038; font-size:22px; padding-right:10px; "></i>Create a New Account</a>
                 <a ng-click="setlogin()" ng-show="!show"  class="button waves-effect waves-light button-full button-assertive" style="width:280px;text-transform:none; color:#000; font-size:17px; opacity:.9; text-align:left; background:#F1F1F1; box-shadow:none; border:1px solid #E0E0E0;"><i class="ion-ios-person" style="color:#FF0038; font-size:22px; padding-right:10px"></i>Login </a>
                 
              </center>
         </div>
         <div ng-hide="!show">
             <div class="list" style="margin-top:10px">
-                <label class="item item-input ion-android-person" style="border-radius:5px; color:#FF0038; font-size:25px; width: 90%; margin: auto; margin-bottom:7px; background: #fff; border:1px solid #E0E0E0">
-                        <input id="email" type="text" placeholder="Email address" ng-model="user.username" style="padding-left:20px; color: #000" required>
+                <center>
+                <label class="item item-input ion-android-person" style="border-radius:5px; color:#FF0038; font-size:25px; width:280px; margin: auto; margin-bottom:7px; background: #fff; border:1px solid #E0E0E0">
+                        <input id="email" type="text" placeholder="Email address" ng-model="user.username" style="width:280px;padding-left:20px; color: #000" required>
             </label>
-            <label class="item item-input ion-android-lock" style="border-radius:5px; font-size:25px;  border-top: none; width: 90%; margin: auto; background: #fff; color:#FF0038; border:1px solid #E0E0E0">
-                        <input id="password" type="password" placeholder="Password" ng-model="user.password" style="padding-left:20px; color: #fff; background: transparent; color:#000" required>
+            <label class="item item-input ion-android-lock" style="border-radius:5px; font-size:25px;  border-top: none; width:280px; margin: auto; background: #fff; color:#FF0038; border:1px solid #E0E0E0">
+                        <input id="password" type="password" placeholder="Password" ng-model="user.password" style="width:280px;padding-left:20px; color: #fff; background: transparent; color:#000" required>
             </label>
+                </center>
             </div>
             <div class="padding">
                 <center><a href="#" ng-click="login(user)" class="button button-balanced mdl-js-button mdl-js-ripple-effect" 

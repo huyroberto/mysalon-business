@@ -31,30 +31,30 @@ app.controller('AppCtrl', function ($scope, $ionicModal, $ionicPopover, $timeout
         $scope.popover.remove();
     });
 
-    
+
     $scope.groups = [];
-    for (var i=0; i<1; i++) {
+    for (var i = 0; i < 1; i++) {
         $scope.groups[i] = {
-        name: i,
-        items: [],
-        show: false
+            name: i,
+            items: [],
+            show: false
         };
     }
-    
+
     /*
     * if given group is the selected group, deselect it
     * else, select the given group
     */
-    $scope.toggleGroup = function(group) {
+    $scope.toggleGroup = function (group) {
         group.show = !group.show;
     };
-    $scope.isGroupShown = function(group) {
+    $scope.isGroupShown = function (group) {
         return group.show;
     };
-    
+
 
 })
-    .controller('LoginCtrl', function ($scope, $state, $window, $rootScope, $stateParams, $ionicPopup,$ionicLoading, $q, ProfileService) {
+    .controller('LoginCtrl', function ($scope, $state, $window, $rootScope, $stateParams, $ionicPopup, $ionicLoading, $q, ProfileService) {
         $rootScope.toggledrag = false;
         $rootScope.islogin = false;
         $rootScope.show = false;
@@ -69,15 +69,15 @@ app.controller('AppCtrl', function ($scope, $ionicModal, $ionicPopover, $timeout
 
         function userLoggedInStatus(user) {
             $rootScope.islogin = true;
-            console.log('logged user:',user);
+            console.log('logged user:', user);
             $rootScope.user_profile = user;
             ProfileService.get_profile(user.email).then(function (response) {
-                if(response.data){
+                if (response.data) {
                     console.log('Remote User data:', response.data.data);
                     $rootScope.user_profile = response.data.data;
                 }
             });
-            
+
             $state.go('app.home');
         }
         function gotError(err) { // see more on error handling
@@ -89,7 +89,7 @@ app.controller('AppCtrl', function ($scope, $ionicModal, $ionicPopover, $timeout
         console.log('Load login page');
 
     })
-    .controller('RegisterCtrl', function ($scope, $state, $window, $ionicPopup,$rootScope, $stateParams, ProfileService) {
+    .controller('RegisterCtrl', function ($scope, $state, $window, $ionicPopup, $rootScope, $stateParams, ProfileService) {
 
         $scope.register = function (user_data) {
             user_data.customer_type = 'PERSONAL';
@@ -100,8 +100,8 @@ app.controller('AppCtrl', function ($scope, $ionicModal, $ionicPopover, $timeout
             user['address'] = user_data.address;
             user['customer_type'] = user_data.customer_type;
 
-            ProfileService.update_profile(user_data).then(function(response){
-                console.log('Profile Register: ',response.data);
+            ProfileService.update_profile(user_data).then(function (response) {
+                console.log('Profile Register: ', response.data);
             })
             console.log(Backendless.UserService.register(user, new Backendless.Async(userRegistered, gotErrorRegister)));
         }
@@ -119,23 +119,37 @@ app.controller('AppCtrl', function ($scope, $ionicModal, $ionicPopover, $timeout
             $state.go('app.login');
         }
     })
-    .controller('SettingsCtrl', function($scope, $ionicPopup){
-         // An alert dialog
-            $scope.showAlert = function() {
+    .controller('SettingsCtrl', function ($scope, $ionicPopup) {
+        // An alert dialog
+        $scope.showAlert = function () {
             var alertPopup = $ionicPopup.alert({
                 title: 'My Salon v. 1.0.0<br/>',
                 template: '<center>Copyright 2016<br/>My Company, Inc.<br/>All rights reserved.</center>'
             });
 
-            alertPopup.then(function(res) {
+            alertPopup.then(function (res) {
                 console.log('Thank you for not eating my delicious ice cream cone');
             });
-            };
+        };
     })
-    .controller('ChatCtrl', function($scope, $timeout, $ionicScrollDelegate) {
-        })
+    .controller('ChatCtrl', function ($scope, $timeout, $ionicScrollDelegate) {
+    })
     .controller('HomeCtrl', function ($scope, $state, $window, $rootScope, $stateParams) {
         if (!$rootScope.islogin) {
             $state.go('app.login');
         }
+    })
+    .controller('ScheduleCtrl', function ($scope, $state, $window, $rootScope, $stateParams) {
+        if (!$rootScope.islogin) {
+            $state.go('app.login');
+        }
+        $("#myCalendar-1").ionCalendar({
+            lang: "en",                     // language
+            sundayFirst: false,             // first week day
+            years: "10",                    // years diapason
+            format: "DD.MM.YYYY",           // date format
+            onClick: function (date) {        // click on day returns date
+                console.log(date);
+            }
+        });
     });
