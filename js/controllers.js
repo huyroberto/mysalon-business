@@ -77,9 +77,9 @@ app.controller('AppCtrl', function ($scope, $ionicModal, $ionicPopover, $timeout
                     $rootScope.user_profile = response.data.data;
                 }
             });
-
-            $state.go('app.home');
             $window.location.reload(true);
+            $state.go('app.home');
+            
         }
         function gotError(err) { // see more on error handling
             var alertPopup = $ionicPopup.alert({
@@ -120,11 +120,7 @@ app.controller('AppCtrl', function ($scope, $ionicModal, $ionicPopover, $timeout
             $state.go('app.login');
         }
     })
-<<<<<<< Updated upstream
-    .controller('SettingsCtrl', function ($scope, $ionicPopup) {
-        // An alert dialog
-        $scope.showAlert = function () {
-=======
+
     .controller('SettingsCtrl', function($scope, $ionicPopup, $ionicActionSheet){
          //show actionsheet
             $scope.showActionsheet = function () {
@@ -147,7 +143,6 @@ app.controller('AppCtrl', function ($scope, $ionicModal, $ionicPopover, $timeout
             }
          // An alert dialog
             $scope.showAlert = function() {
->>>>>>> Stashed changes
             var alertPopup = $ionicPopup.alert({
                 title: 'My Salon v. 1.0.0<br/>',
                 template: '<center>Copyright 2016<br/>My Company, Inc.<br/>All rights reserved.</center>'
@@ -169,11 +164,18 @@ app.controller('AppCtrl', function ($scope, $ionicModal, $ionicPopover, $timeout
         if (!$rootScope.islogin) {
             $state.go('app.login');
         }
-        $("#myCalendar-1").ionCalendar({
+        $scope.calendar = true;
+        $scope.hide = function(){
+            $scope.calendar = true;
+        };
+        $scope.show = function (){
+            $scope.calendar = false;
+        };
+        $("#newcalendar").ionCalendar({
             lang: "en",                     // language
             sundayFirst: false,             // first week day
-            years: "10",                    // years diapason
-            format: "DD.MM.YYYY",           // date format
+            years: "15",                    // years diapason
+            format: "DD/MM/YYYY",           // date format
             onClick: function (date) {        // click on day returns date
                 console.log(date);
             }

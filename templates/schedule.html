@@ -83,11 +83,21 @@
         z-index: 5;
     }
 
-    #content div {
+    #content #content-1 {
         opacity: 0;
-        padding: 1.5em;
-        position: absolute;
+        /*padding: 1.5em;
+        position: absolute;*/
         z-index: -100;
+        /*
+        transition: all linear 0.1s;
+        */
+    }
+
+    #content #content-2 {
+        opacity: 0;
+        /*padding: 1.5em;
+        position: absolute;*/
+        z-index: 100;
         /*
         transition: all linear 0.1s;
         */
@@ -139,52 +149,139 @@
    <ion-content scroll="true">
        
        <!--Contenedor-->
-	<div id="container">
+	<div id="container" style="margin-bottom:60px">
         <div class="row">
         <div class="col">
-            
-            <center>
             <!--Pestaña 1 activa por defecto-->
-            <input id="tab-1" type="radio" name="tab-group" checked="checked" style="margin-bottom:20px"/>
-            <label for="tab-1" style="margin-top:10px; width:120px; border-radius: .25em 0 0 .25em;">Calendar</label>
+            <input id="tab-1" type="radio" name="tab-group" ng-click="hide()" checked="checked" style="margin-bottom:20px"/>
+            <label for="tab-1" style="margin-top:10px; width:110px; border-radius: .25em 0 0 .25em;">Calendar</label>
             <!--Pestaña 2 inactiva por defecto-->
-            <input id="tab-2" type="radio" name="tab-group" />
-            <label for="tab-2" style="margin-top:10px; margin-left:0; width:120px; border-radius: 0 .25em .25em 0;">List</label>
+            <input id="tab-2" type="radio" name="tab-group" ng-click="show()"/>
+            <label for="tab-2" style="margin-top:10px; margin-left:0; width:110px; border-radius: 0 .25em .25em 0;">List</label>
 
-            <a ng-href="#/app/add-reservation" style="color:#4A90E2; text-decoration: none;display: inline-flex; margin-left:-33px">
-            <i class="ion-ios-plus" style="color:#FF2C55; font-size:23px">
+            <a ng-href="#/app/add-reservation" style="color:#4A90E2; text-decoration: none;display: inline-flex; margin-left:-21px">
+              <i class="ion-ios-plus" style="color:#FF2C55; font-size:23px">
                 <span style="margin-left:1px">Add</span>
              </i>
-        </a>
-        <div class="myCalendar" id="myCalendar-1"></div>
+            </a>
               <!--Contenido a mostrar/ocultar-->
             <div id="content">
                 <!--Contenido de la Pestaña 1-->
-                <div id="content-1">
-                    <p class="left">   
-                        <input placeholder="abc">                             
-                    </p>
+                <div id="content-1" ng-show="calendar">
+                         <div class="myCalendar" id="newcalendar"></div>
+                         <div class="list" style="background:#fff; margin-top:10px; margin-bottom:0">
+                            <a class="item item-icon-left item-icon-right" style="border:none; padding-left:65px; color:#3A3F34; background:#E2F5CE" href="#">
+                                all-day <span style="color:#CF89DD">|</span> Tanaka's Birthday
+                            </a>
+                            <a class="item item-icon-left item-icon-right" style="border:none; padding-left:65px; color:#3A3F34; background:#E8C5F1" href="#">
+                                all-day <span style="color:#CF89DD">|</span> @YSalon
+                            </a>
+                        </div>
+                        <table style="width:100%;">
+                            <tr>
+                                <td style="width:15%; padding-left:10px; padding-top:10px; padding-bottom:10px;">
+                                    9:00
+                                </td>
+                                <td colspan="2" class="as" style="border:1px solid #E3E2E5; border-left:none; border-right:none; border-top:none; font-weight:100">
+                                </td>
+                            </tr>
+                            <tr>
+                                <td style="width:10%; padding-left:10px; padding-top:10px; padding-bottom:10px">
+                                    10:00
+                                </td>
+                                <td colspan="2" class="as" style="border:1px solid #E3E2E5; border-left:none; border-bottom:none; border-right:none; font-size:13px; font-weight:100; background:#E4B8EF">
+                                &nbsp&nbsp 10:00-13:00<br/>
+                                 &nbsp&nbsp Ikeda Mariko (Cut, Color)
+                                </td>
+                            </tr>
+                            <tr>
+                                <td style="width:10%; padding-left:10px; padding-top:10px; padding-bottom:10px">
+                                    11:00
+                                </td>
+                                <td colspan="2" class="as" style="border:1px solid #E3E2E5; border-left:none; border-bottom:none; border-right:none; font-weight:100; background:#E4B8EF">
+                                </td>
+                            </tr>
+                            <tr>
+                                <td style="width:10%; padding-left:10px; padding-top:10px; padding-bottom:10px">
+                                    12:00
+                                </td>
+                                <td colspan="2" class="as" style="border:1px solid #E3E2E5; border-left:none; border-bottom:none; border-right:none; font-weight:100; background:#E4B8EF">
+                                </td>
+                            </tr>
+                            <tr>
+                                <td style="width:10%; padding-left:10px; padding-top:10px; padding-bottom:10px">
+                                    13:00
+                                </td>
+                                <td colspan="2" class="as" style="border:1px solid #E3E2E5; border-left:none; border-bottom:none; border-right:none; font-weight:100; background:#E4B8EF">
+                                </td>
+                            </tr>
+                        </table>
+
                 </div>
                 <!--Contenido de la Pestaña 2-->
-                <div id="content-2">
+                <div id="content-2" ng-show="!calendar">
+                    <div class="item item-divider" style="background:#F2F2F2; border:1px solid #E3E2E5; border-left:none; border-right:none; font-size:25px; line-height:30px">
+                        July,29,2016
+                    </div>
+                    <div class="list" style="background:#fff; margin-top:10px; margin-bottom:0">
+                            <a class="item item-icon-left item-icon-right" style="border:none; padding-left:65px; color:#3A3F34; background:#E2F5CE" href="#">
+                                all-day <span style="color:#CF89DD">|</span> Tanaka's Birthday
+                            </a>
+                            <a class="item item-icon-left item-icon-right" style="border:none; padding-left:65px; color:#3A3F34; background:#E8C5F1" href="#">
+                                all-day <span style="color:#CF89DD">|</span> @YSalon
+                            </a>
+                        </div>
+                        <table style="width:100%;">
+                            <tr>
+                                <td style="width:15%; padding-left:10px; padding-top:10px; padding-bottom:10px;">
+                                    9:00
+                                </td>
+                                <td colspan="2" class="as" style="border:1px solid #E3E2E5; border-left:none; border-right:none; border-top:none; font-weight:100">
+                                </td>
+                            </tr>
+                            <tr>
+                                <td style="width:10%; padding-left:10px; padding-top:10px; padding-bottom:10px">
+                                    10:00
+                                </td>
+                                <td colspan="2" class="as" style="border:1px solid #E3E2E5; border-left:none; border-bottom:none; border-right:none; font-size:13px; font-weight:100; background:#E4B8EF">
+                                &nbsp&nbsp 10:00-13:00<br/>
+                                 &nbsp&nbsp Ikeda Mariko (Cut, Color)
+                                </td>
+                            </tr>
+                            <tr>
+                                <td style="width:10%; padding-left:10px; padding-top:10px; padding-bottom:10px">
+                                    11:00
+                                </td>
+                                <td colspan="2" class="as" style="border:1px solid #E3E2E5; border-left:none; border-bottom:none; border-right:none; font-weight:100; background:#E4B8EF">
+                                </td>
+                            </tr>
+                            <tr>
+                                <td style="width:10%; padding-left:10px; padding-top:10px; padding-bottom:10px">
+                                    12:00
+                                </td>
+                                <td colspan="2" class="as" style="border:1px solid #E3E2E5; border-left:none; border-bottom:none; border-right:none; font-weight:100; background:#E4B8EF">
+                                </td>
+                            </tr>
+                            <tr>
+                                <td style="width:10%; padding-left:10px; padding-top:10px; padding-bottom:10px">
+                                    13:00
+                                </td>
+                                <td colspan="2" class="as" style="border:1px solid #E3E2E5; border-left:none; border-bottom:none; border-right:none; font-weight:100; background:#E4B8EF">
+                                </td>
+                            </tr>
+                        </table>
+
                 </div>
             </div>
-            </center>
         </div>
 	</div>
 	</div>
-     <!--<script type="text/javascript-lazy">
-          
-         $("#myCalendar-1").ionCalendar({
-    lang: "ru",                     // language
-    sundayFirst: false,             // first week day
-    years: "80",                    // years diapason
-    format: "DD.MM.YYYY",           // date format
-    onClick: function(date){        // click on day returns date
-        console.log(date);
-    }
-});
-           
-    </script>-->
+    <script>
+         function hide() {
+             console.log("abc");
+                                    document.getElementById("content-2").style.visibility = "hidden";
+                                    document.getElementById("content-1").style.visibility = "visible";
+                                } 
+    </script>
     </ion-content>
 </ion-view>
