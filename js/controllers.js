@@ -79,6 +79,7 @@ app.controller('AppCtrl', function ($scope, $ionicModal, $ionicPopover, $timeout
             });
 
             $state.go('app.home');
+            $window.location.reload(true);
         }
         function gotError(err) { // see more on error handling
             var alertPopup = $ionicPopup.alert({
@@ -119,9 +120,34 @@ app.controller('AppCtrl', function ($scope, $ionicModal, $ionicPopover, $timeout
             $state.go('app.login');
         }
     })
+<<<<<<< Updated upstream
     .controller('SettingsCtrl', function ($scope, $ionicPopup) {
         // An alert dialog
         $scope.showAlert = function () {
+=======
+    .controller('SettingsCtrl', function($scope, $ionicPopup, $ionicActionSheet){
+         //show actionsheet
+            $scope.showActionsheet = function () {
+                $ionicActionSheet.show({
+                    	// titleText: 'ActionSheet Example',
+                        buttons: [
+                            { text: '<i class="icon ion-social-facebook"></i>Facebook' },
+                            { text: '<i class="icon ion-social-twitter"></i>Twitter' },
+                            { text: '<i class="icon ion-more"></i>More' }, 
+                        ],
+                        buttonClicked: function(index) {
+                            // alert('BUTTON CLICKED' + index);
+                            return true;
+                        },
+                        cancelText: 'Cancel',
+                        cancel: function() {
+                            console.log('CANCELLED');
+                            }
+                });
+            }
+         // An alert dialog
+            $scope.showAlert = function() {
+>>>>>>> Stashed changes
             var alertPopup = $ionicPopup.alert({
                 title: 'My Salon v. 1.0.0<br/>',
                 template: '<center>Copyright 2016<br/>My Company, Inc.<br/>All rights reserved.</center>'
