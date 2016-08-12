@@ -77,8 +77,9 @@ app.controller('AppCtrl', function ($scope, $ionicModal, $ionicPopover, $timeout
                     $rootScope.user_profile = response.data.data;
                 }
             });
-
+            $window.location.reload(true);
             $state.go('app.home');
+            
         }
         function gotError(err) { // see more on error handling
             var alertPopup = $ionicPopup.alert({
@@ -119,7 +120,43 @@ app.controller('AppCtrl', function ($scope, $ionicModal, $ionicPopover, $timeout
             $state.go('app.login');
         }
     })
+<<<<<<< HEAD
    
+=======
+
+    .controller('SettingsCtrl', function($scope, $ionicPopup, $ionicActionSheet){
+         //show actionsheet
+            $scope.showActionsheet = function () {
+                $ionicActionSheet.show({
+                    	// titleText: 'ActionSheet Example',
+                        buttons: [
+                            { text: '<i class="icon ion-social-facebook"></i>Facebook' },
+                            { text: '<i class="icon ion-social-twitter"></i>Twitter' },
+                            { text: '<i class="icon ion-more"></i>More' }, 
+                        ],
+                        buttonClicked: function(index) {
+                            // alert('BUTTON CLICKED' + index);
+                            return true;
+                        },
+                        cancelText: 'Cancel',
+                        cancel: function() {
+                            console.log('CANCELLED');
+                            }
+                });
+            }
+         // An alert dialog
+            $scope.showAlert = function() {
+            var alertPopup = $ionicPopup.alert({
+                title: 'My Salon v. 1.0.0<br/>',
+                template: '<center>Copyright 2016<br/>My Company, Inc.<br/>All rights reserved.</center>'
+            });
+
+            alertPopup.then(function (res) {
+                console.log('Thank you for not eating my delicious ice cream cone');
+            });
+        };
+    })
+>>>>>>> origin/master
     .controller('ChatCtrl', function ($scope, $timeout, $ionicScrollDelegate) {
     })
     .controller('HomeCtrl', function ($scope, $state, $window, $rootScope, $stateParams) {
@@ -131,11 +168,23 @@ app.controller('AppCtrl', function ($scope, $ionicModal, $ionicPopover, $timeout
         if (!$rootScope.islogin) {
             $state.go('app.login');
         }
-        $("#myCalendar-1").ionCalendar({
+        $scope.calendar = true;
+        $scope.hide = function(){
+            $scope.calendar = true;
+        };
+        $scope.show = function (){
+            $scope.calendar = false;
+        };
+        $("#newcalendar").ionCalendar({
             lang: "en",                     // language
             sundayFirst: false,             // first week day
+<<<<<<< HEAD
             years: "10",                    // years diapason
             format: "MM.DD.YYYY",           // date format
+=======
+            years: "15",                    // years diapason
+            format: "DD/MM/YYYY",           // date format
+>>>>>>> origin/master
             onClick: function (date) {        // click on day returns date
                 console.log(date);
             }

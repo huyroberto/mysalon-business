@@ -21,7 +21,7 @@
 .ic__datepicker {
     margin: 0; padding: 0;
     font-family: Arial, Helvetica, sans-serif;
-    font-size: 10px; line-height: 13px;
+    font-size: 13px; line-height: 13px;
     cursor: default;
     text-shadow: none !important;
 }
@@ -41,14 +41,14 @@
 
 .ic__header {
     position: relative;
-    background: #555;
+    background: #FF2C55;
     height: 35px;
 }
     .ic__prev, .ic__next {
         position: absolute;
         top: 0;
         width: 7%; height: 35px;
-        background-color: #555;
+        background-color: #FF2C55;
         cursor: pointer;
     }
     .ic__prev:hover, .ic__next:hover {
@@ -94,10 +94,11 @@
         -moz-box-sizing: border-box;
         box-sizing: border-box;
         width: 100%;
-        border: 1px solid #000;
+        border: 1px solid #FF2C55;
         padding: 2px;
         font-size: 14px;
-        font-weight: bold;
+        font-weight: 400;
+        text-align: center;
     }
     .ic__header select:focus {
         outline: none;
@@ -112,7 +113,7 @@
     padding: 10px 0 8px;
 
     border: 1px solid #ebebeb;
-    color: #b5b5b5;
+    color: #313131;
     font-size: 9px; line-height: 1.333;
     text-transform: uppercase;
 }
@@ -128,8 +129,8 @@
         padding: 10px 0 8px;
 
         border: 1px solid #ebebeb;
-        color: #757575;
-        font-size: 9px; line-height: 1.333;
+        color: #313131;
+        font-size: 15px; line-height: 1.333;
         text-transform: uppercase;
     }
     .ic__days .ic__day {
@@ -144,12 +145,14 @@
         background: #fff url('data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAAUAAAAFCAMAAAC6sdbXAAAAGXRFWHRTb2Z0d2FyZQBBZG9iZSBJbWFnZVJlYWR5ccllPAAAAAZQTFRF7u7u////KNOqmgAAABlJREFUeNpiYGRkZABCCGIA8UAEI4QACDAAAUoAFV5+ydgAAAAASUVORK5CYII=');
     }
     .ic__days .ic__day_state_current {
-        background: #f4f4f4;
-        color: #000;
+        text-align: center;
+        background: #FF2C55;
+        color:#fff;
     }
     .ic__days .ic__day_state_selected {
+        text-align: center;
         background: #f4f4f4;
-        color: #000;
+        color:#FF2C55;
     }
 
 
