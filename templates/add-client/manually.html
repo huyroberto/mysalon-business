@@ -1,0 +1,84 @@
+<style>
+    .as{
+        vertical-align: middle;
+        font-size: 18px;
+        font-weight: 700;
+    }
+    .glowing-border {
+    border: 1px dashed #9ecaed;
+    }
+</style>
+<ion-view title="Add Client">
+<ion-nav-buttons side="right">
+      <button style="min-height:10px; min-width:10px; margin-top:6px; margin-bottom:4px; margin-right:6px; font-size:19px; padding-left:10px; padding-right:10px; color:#FF0038;">
+        Save
+      </button>
+    </ion-nav-buttons>
+   <ion-content scroll="true">
+            <form  style="height: 100%; background: #fff; background-size: cover;">
+                     <table style="width:100%; margin-top:10px">
+                        <tr>
+                                <td style="width:20%; padding-left:10px; padding-right:10px">
+                                    
+                                    <img src="img/nana.jpeg" style="height:70px; width:70px; border-radius:70px; margin-top:20px">
+
+                                </td>
+                                <td class="as" style="border:1px solid #E3E2E5; border-left:none; border-right:none; border-top:none">
+                                    <ul>
+                                        <li style="border-bottom:none; padding-bottom:0px; font-weight:100; color:#343434">
+                                            <label class="item item-input glowing-border" style="border-radius:2px; font-size:25px; width: 100%; height:35px; margin-top:0; margin-bottom:0px; background: transparent; border-right:none ; border-top:none; border-left:none">
+                                                <input  type="text" placeholder=" Name" style="padding-left:10px; color: #000" required="">
+                                            </label>                                       
+                                         </li>
+                                        <li style="border-bottom:none; padding-top:0px; padding-bottom:0px; font-weight:100; color:#343434">
+                                            <label class="item item-input glowing-border" style="border-radius:2px; font-size:25px; width: 100%; height:35px; margin-top:0; margin-bottom:0px; background: transparent; border-right:none ; border-top:none; border-left:none">
+                                                <input type="text" placeholder=" Name (kana)" style="padding-left:10px; color: #000" required="">
+                                            </label>
+                                           </li>
+                                        <li style="font-weight:100; padding-top:0px; padding-bottom:0px; color:#343434">
+                                            <label class="item ion-ios-telephone-outline item-input glowing-border" style="border-radius:2px; font-size:25px; width: 100%; height:35px; margin-top:0; margin-bottom:0px; background: transparent; border:none ; color: red">
+                                                <input type="text" placeholder="Phone number" style="padding-left:10px; color: #000" required="">
+                                            </label>
+                                        </li>
+                                    </ul>
+                                </td>
+                            </tr>
+                            <tr>
+                                <td class="as" colspan="2" style="border-bottom:1px solid #E3E2E5">
+                                    <ul>
+                                        <li style="border-bottom:none; padding-left:10px; padding-top:0px; padding-bottom:0px; font-weight:100; color:#4A90E2">
+                                            <label class="item item-input glowing-border" style="border-radius:2px; font-size:25px; width: 100%; height:35px; margin-top:0; margin-bottom:0px; background: transparent; border:none">
+                                                <input type="text" placeholder="Email Address" style="padding-left:10px; color: #000" required="">
+                                            </label>
+                                        </li>
+                                        <li style="border-bottom:none; font-weight:100; color:#343434">
+                                             <a class="item item-icon-right as" href="#" style="border-bottom:1px solid #E3E2E5; font-size: 17px; font-weight: 100; border-left:none; border-right:none; padding-top:10px; padding-bottom:10px">
+                                                    Gender
+                                                    <i class="icon ion-ios-arrow-right" style="color:#A3A3A3; font-size:17px"></i>
+                                                </a>
+                                        </li>
+                                        <li style="font-weight:100; color:#343434">
+                                             <a class="item item-icon-right as" href="#" style="border-bottom:1px solid #E3E2E5; font-size: 17px; font-weight: 100; border-left:none; border-right:none; padding-top:10px; padding-bottom:10px">
+                                                Birthday
+                                                <i class="icon ion-ios-arrow-right" style="color:#A3A3A3; font-size:17px"></i>
+                                            </a>
+                                        </li>
+                                        <li style="border-bottom:none; padding-left:10px; padding-top:0px; padding-bottom:0px; font-weight:100; color:#4A90E2">
+                                            <label class="item item-input glowing-border ion-ios-navigate-outline" style="border-radius:2px; font-size:25px; width: 100%; height:35px; margin-top:0; margin-bottom:0px; background: transparent; border:none; color:red; padding-left:2px">
+                                                <input type="text" placeholder="Enter Address here" style="padding-left:10px; color: #000" required="">
+                                            </label>
+                                        </li>
+                                    </ul>
+                                </td>
+                            </tr>
+                     </table>   
+                     <div  style="font-size:17px; height:20%; background:#F5F5F5; padding-top:2%; padding-left:5%; padding-bottom:2%; border-bottom: 1px solid #E3E2E5;">
+                               Note
+                     </div>
+                     
+                     <div  style="font-size:17px; height:20%; background:#F5F5F5; padding-top:2%; padding-left:5%; padding-bottom:2%; border-bottom: 1px solid #E3E2E5;">
+                               History
+                     </div>
+            </form>
+</ion-content>
+</ion-view>

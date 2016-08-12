@@ -120,10 +120,6 @@ app.controller('AppCtrl', function ($scope, $ionicModal, $ionicPopover, $timeout
             $state.go('app.login');
         }
     })
-<<<<<<< HEAD
-   
-=======
-
     .controller('SettingsCtrl', function($scope, $ionicPopup, $ionicActionSheet){
          //show actionsheet
             $scope.showActionsheet = function () {
@@ -156,7 +152,21 @@ app.controller('AppCtrl', function ($scope, $ionicModal, $ionicPopover, $timeout
             });
         };
     })
->>>>>>> origin/master
+    .controller('QRCtrl',function ($scope, $timeout, $ionicScrollDelegate) {
+        $scope.QR = true;
+        $scope.hide = function(){
+            $scope.QR = true;
+        };
+        $scope.show = function (){
+            $scope.QR = false;
+        };
+    })
+    .controller('ShakeCtrl',function ($scope, $timeout, $ionicScrollDelegate) {
+        $scope.shake = true;
+        $scope.hide = function(){
+            $scope.shake = false;
+        };
+    })
     .controller('ChatCtrl', function ($scope, $timeout, $ionicScrollDelegate) {
     })
     .controller('HomeCtrl', function ($scope, $state, $window, $rootScope, $stateParams) {
@@ -177,14 +187,9 @@ app.controller('AppCtrl', function ($scope, $ionicModal, $ionicPopover, $timeout
         };
         $("#newcalendar").ionCalendar({
             lang: "en",                     // language
-            sundayFirst: false,             // first week day
-<<<<<<< HEAD
-            years: "10",                    // years diapason
-            format: "MM.DD.YYYY",           // date format
-=======
+            sundayFirst: false,             // first week day     
             years: "15",                    // years diapason
             format: "DD/MM/YYYY",           // date format
->>>>>>> origin/master
             onClick: function (date) {        // click on day returns date
                 console.log(date);
             }

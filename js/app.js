@@ -135,6 +135,36 @@ app.config(function ($stateProvider, $urlRouterProvider) {
         }
     })
 
+    .state('app.qrcode', {
+        url: '/qr-code',
+        views: {
+            'menuContent': {
+                templateUrl: 'templates/add-client/qr.html',
+                controller: 'QRCtrl'
+            }
+        }
+    })
+
+    .state('app.shake', {
+        url: '/shake-it',
+        views: {
+            'menuContent': {
+                templateUrl: 'templates/add-client/shake.html',
+                controller: 'ShakeCtrl'
+            }
+        }
+    })
+
+    .state('app.manually', {
+        url: '/manually',
+        views: {
+            'menuContent': {
+                templateUrl: 'templates/add-client/manually.html',
+                // controller: 'ManuallyCtrl'
+            }
+        }
+    })
+
     .state('app.myprofile', {
         url: '/my-profile',
         views: {

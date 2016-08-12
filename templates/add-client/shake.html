@@ -1,0 +1,44 @@
+<ion-view  title="<span class='home'>My Salon</span>" hide-back-button="false">
+     <ion-nav-buttons side="left">
+        <button class="button button-icon button-clear" menu-toggle="left">
+            <img src="img/dm.png">
+        </button>
+    </ion-nav-buttons>
+   <ion-content scroll="true">
+        <!--<div class="login-header" style="padding-top:10px;">  
+                    My Salon
+                </div>-->
+                <div class="padding">
+                <form style="height: 100%; background: #fff; background-size: cover;">
+                    <div ng-show="shake">
+                        <h5 style="font-size:20px; text-align:center; color:#FF0038; padding:0;font-weight:500; margin-bottom:6%; margin-top:2%">
+                            Shake it!
+                        </h5>
+                       <a ng-click="hide()">
+                            <h4 style="color:#fff; text-align:center; padding-top:0px; padding-bottom:10px; margin-top:50px">
+                                <img src="img/shake.png" style="width:250px;">
+                            </h4>
+                       </a>
+                        <p style="text-align:center; color:#B2B2B2; font-size:18px">
+                            Shake your phone together <br/> to synchronize
+                        </p>
+                    </div>
+
+                    <div ng-show="!shake">
+                        <h5 style="font-size:25px; text-align:center; color:#FF0038; padding:0;font-weight:500; margin-bottom:6%; margin-top:30%">
+                            Success!
+                        </h5>
+                        <p style="text-align:center; color:#B2B2B2; font-size:18px">
+                            Add Mariko Yamada to<br/> your contacts ?
+                        </p>
+                    </div>
+                <div class="padding">
+                    <center>
+                        <a ng-show="!shake" class="button waves-effect waves-light button-full button-assertive" style="padding-left:0px; padding-right:0px; width:65%;text-transform:none; color:#fff; font-size:17px; text-align:center; background:#FF0038; box-shadow:none; border:1px solid #E0E0E0;">
+                        Save</a>
+                    </center>
+                </div>
+            </form>
+                </div>
+</ion-content>
+</ion-view>
