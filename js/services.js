@@ -36,4 +36,28 @@ angular.module('BackendServices', [])
         return $http.post(url, parameter, header);
       }
     }
-  });
+  })
+  .factory('SettingService', function ($http) {
+    var api_gateway_url = 'http://192.168.99.100:99/';
+    return {
+      menu_save: function (menu) {
+        var parameter = JSON.stringify(menu);
+        var url = api_gateway_url + 'business/menu/save';
+        var header = { headers: { 'Content-Type': 'application/json', 'app_id': 'lextenweb_1.0.0.0' } };
+        return $http.post(url, parameter, header);
+      },
+      menu_list: function (user_id) {
+        var parameter = JSON.stringify({user_id:user_id});
+        var url = api_gateway_url + 'business/menu/list';
+        var header = { headers: { 'Content-Type': 'application/json', 'app_id': 'lextenweb_1.0.0.0' } };
+        return $http.post(url, parameter, header);
+      },
+      client_list : function(user_id){
+        var parameter = JSON.stringify({user_id:user_id});
+        var url = api_gateway_url + 'business/client/list';
+        var header = { headers: { 'Content-Type': 'application/json', 'app_id': 'lextenweb_1.0.0.0' } };
+        return $http.post(url, parameter, header);
+        }
+    }
+  })
+  ;

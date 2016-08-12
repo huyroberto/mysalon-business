@@ -119,19 +119,7 @@ app.controller('AppCtrl', function ($scope, $ionicModal, $ionicPopover, $timeout
             $state.go('app.login');
         }
     })
-    .controller('SettingsCtrl', function ($scope, $ionicPopup) {
-        // An alert dialog
-        $scope.showAlert = function () {
-            var alertPopup = $ionicPopup.alert({
-                title: 'My Salon v. 1.0.0<br/>',
-                template: '<center>Copyright 2016<br/>My Company, Inc.<br/>All rights reserved.</center>'
-            });
-
-            alertPopup.then(function (res) {
-                console.log('Thank you for not eating my delicious ice cream cone');
-            });
-        };
-    })
+   
     .controller('ChatCtrl', function ($scope, $timeout, $ionicScrollDelegate) {
     })
     .controller('HomeCtrl', function ($scope, $state, $window, $rootScope, $stateParams) {
@@ -147,7 +135,7 @@ app.controller('AppCtrl', function ($scope, $ionicModal, $ionicPopover, $timeout
             lang: "en",                     // language
             sundayFirst: false,             // first week day
             years: "10",                    // years diapason
-            format: "DD.MM.YYYY",           // date format
+            format: "MM.DD.YYYY",           // date format
             onClick: function (date) {        // click on day returns date
                 console.log(date);
             }
