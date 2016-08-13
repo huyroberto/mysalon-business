@@ -120,7 +120,7 @@ app.config(function ($stateProvider, $urlRouterProvider) {
         views: {
             'menuContent': {
                 templateUrl: 'templates/addreservation.html',
-                // controller: 'MysalonCtrl'
+                controller: 'AddreservationCtrl'
             }
         }
     })
@@ -160,7 +160,7 @@ app.config(function ($stateProvider, $urlRouterProvider) {
         views: {
             'menuContent': {
                 templateUrl: 'templates/add-client/manually.html',
-                // controller: 'ManuallyCtrl'
+                controller: 'ManuallyCtrl'
             }
         }
     })
