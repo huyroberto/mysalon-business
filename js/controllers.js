@@ -167,6 +167,12 @@ app.controller('AppCtrl', function ($scope, $ionicModal, $ionicPopover, $timeout
             $scope.shake = false;
         };
     })
+    .controller('ManuallyCtrl',function ($scope, $timeout, $ionicScrollDelegate) {
+        $scope.note = true;
+        $scope.hide = function(){
+            $scope.note = false;
+        };
+    })
     .controller('ChatCtrl', function ($scope, $timeout, $ionicScrollDelegate) {
     })
     .controller('HomeCtrl', function ($scope, $state, $window, $rootScope, $stateParams) {
@@ -174,7 +180,17 @@ app.controller('AppCtrl', function ($scope, $ionicModal, $ionicPopover, $timeout
             $state.go('app.login');
         }
     })
+<<<<<<< HEAD
     .controller('ScheduleCtrl', function ($scope, $state, $window, $rootScope, $stateParams, $compile, uiCalendarConfig) {
+=======
+    .controller('AddreservationCtrl', function ($scope, $state, $window, $rootScope, $stateParams) {
+        if (!$rootScope.islogin) {
+            $state.go('app.login');
+        }
+        $("#days").ionDatePicker();
+    })
+    .controller('ScheduleCtrl', function ($scope, $state, $window, $rootScope, $stateParams) {
+>>>>>>> origin/master
         if (!$rootScope.islogin) {
             $state.go('app.login');
         }
