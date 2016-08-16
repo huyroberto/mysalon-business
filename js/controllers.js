@@ -77,7 +77,7 @@ app.controller('AppCtrl', function ($scope, $ionicModal, $ionicPopover, $timeout
                     $rootScope.user_profile = response.data.data;
                 }
             });
-            $window.location.reload(true);
+            // $window.location.reload(true);
             $state.go('app.home');
 
         }
@@ -180,17 +180,13 @@ app.controller('AppCtrl', function ($scope, $ionicModal, $ionicPopover, $timeout
             $state.go('app.login');
         }
     })
-<<<<<<< HEAD
-    .controller('ScheduleCtrl', function ($scope, $state, $window, $rootScope, $stateParams, $compile, uiCalendarConfig) {
-=======
     .controller('AddreservationCtrl', function ($scope, $state, $window, $rootScope, $stateParams) {
         if (!$rootScope.islogin) {
             $state.go('app.login');
         }
         $("#days").ionDatePicker();
     })
-    .controller('ScheduleCtrl', function ($scope, $state, $window, $rootScope, $stateParams) {
->>>>>>> origin/master
+   .controller('ScheduleCtrl', function ($scope, $state, $window, $rootScope, $stateParams, $compile, uiCalendarConfig) {
         if (!$rootScope.islogin) {
             $state.go('app.login');
         }
